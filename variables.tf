@@ -78,3 +78,8 @@ variable "createOption" {
   type    = string
   default = "Empty"
 }
+
+variable "user_identity" {
+  type = list
+  default = []
+}
