@@ -80,7 +80,8 @@ resource "azurerm_linux_virtual_machine" "vm" {
   }
 
   identity {
-    type = "SystemAssigned"
+    type = var.user_identity == [] ? "SystemAssigned" : "SystemAssigned, UserAssigned"
+    identity_ids = var.user_identity
   }
 
   os_disk {
